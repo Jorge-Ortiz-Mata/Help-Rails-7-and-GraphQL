@@ -10,4 +10,10 @@ class Types::UserType < Types::BaseObject
   field :city, String, null: true
   field :postcode, Int, null: true
   field :country, String, null: true
+  field :full_address, String, null: true
+
+
+  def full_address
+    "Street: #{object.street}; Number: #{object.number}; Post Code: #{object.postcode}; City: #{object.city}"
+  end
 end

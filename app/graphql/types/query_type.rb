@@ -18,5 +18,12 @@ module Types
     def users
       User.all
     end
+    # ----------------------------------------
+    # --------- Getting all Posts -------------
+    field :posts, [Types::PostType], null: true
+
+    def posts
+      Post.all
+    end
   end
 end

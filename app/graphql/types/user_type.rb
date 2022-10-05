@@ -23,6 +23,7 @@ class Types::UserInputType < GraphQL::Schema::InputObject
   graphql_name "UserInputType"
   description "Adding the arguments in this section (params) C/U."
 
+  argument :id, ID, required: false
   argument :first_name, String, required: false
   argument :last_name, String, required: false
   argument :street, String, required: false

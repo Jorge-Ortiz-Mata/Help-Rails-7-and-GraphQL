@@ -12,7 +12,7 @@ module Types
       User.find(id)
     end
     # -----------------------------------------
-    # --------- Getting all users. -----------
+    # --------- Getting all Users. -----------
     field :users, [Types::UserType], null: true
 
     def users

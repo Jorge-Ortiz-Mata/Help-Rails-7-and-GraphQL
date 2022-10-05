@@ -1,24 +1,52 @@
-# README
+# Ruby on Rails with GraphQL.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Rails application integrating GraphQL as a query language.
 
-Things you may want to cover:
+## Mutations
 
-* Ruby version
+This is a better way to send a post request in order to save the record
 
-* System dependencies
+**GraphQL Section.**
 
-* Configuration
+```
+mutation createUser(
+	$first_name:String,
+	$last_name:String,
+	$street:String,
+	$number:Int,
+	$city:String,
+	$postcode:Int,
+	$country:String
 
-* Database creation
+){
+	createUser(
+		firstName: $first_name,
+		lastName: $last_name,
+		street: $street,
+		number: $number,
+		city: $city,
+		postcode: $postcode,
+		country: $country
+	){
+		id
+		postcode
+		city
+	}
+}
+```
 
-* Database initialization
+**Query Section.**
 
-* How to run the test suite
+It sends a JSON object.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+{
+	"first_name": "David",
+	"last_name": "Paredes",
+	"street": "Cuarzo",
+	"number": 624,
+	"city": "Mexico",
+	"postcode": 78324,
+	"country": "Mexico"
+}
+```

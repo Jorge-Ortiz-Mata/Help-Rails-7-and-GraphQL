@@ -2,7 +2,7 @@ class Mutations::CreateUser < GraphQL::Schema::Mutation
 
   null true
 
-  argument :first_name, String, required: true
+  argument :first_name, String, required: false
   argument :last_name, String, required: false
   argument :street, String, required: false
   argument :number, Int, required: false

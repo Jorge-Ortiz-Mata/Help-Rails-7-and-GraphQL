@@ -18,3 +18,16 @@ class Types::UserType < Types::BaseObject
     "Street: #{object.street}; Number: #{object.number}; Post Code: #{object.postcode}; City: #{object.city}"
   end
 end
+
+class Types::UserInputType < GraphQL::Schema::InputObject
+  graphql_name "UserInputType"
+  description "Adding the arguments in this section (params) C/U."
+
+  argument :first_name, String, required: false
+  argument :last_name, String, required: false
+  argument :street, String, required: false
+  argument :number, Int, required: false
+  argument :city, String, required: false
+  argument :postcode, Int, required: false
+  argument :country, String, required: false
+end

@@ -11,6 +11,7 @@ class Types::UserType < Types::BaseObject
   field :postcode, Int, null: true
   field :country, String, null: true
   field :full_address, String, null: true
+  field :posts, [Types::PostType], null: true
 
 
   def full_address
